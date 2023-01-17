@@ -1,0 +1,17 @@
+{
+  "name": "ftc-pptr",
+  "version": "1.0.0",
+  "description": "Merged scripts from the midjourney scraper and the puppeteer tweeter",
+  "main": "action.js",
+  "scripts": {
+    "start": "node action.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "eebod",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "puppeteer": "^19.5.0"
+  }
+}
