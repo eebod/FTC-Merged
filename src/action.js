@@ -100,10 +100,8 @@ https.get('https://www.midjourney.com/showcase/recent/', (resp)=>{
   ])
   
   filechooser.accept(['image1.png','image2.png','image3.png', 'image4.png'])
-  
 
-  //ALT Texts
-
+  //Adding Alt Texts to Images
   //Wait for selector
   await page.waitForSelector('.r-170w6zn')
 
@@ -118,61 +116,61 @@ https.get('https://www.midjourney.com/showcase/recent/', (resp)=>{
   await page.keyboard.type(imgAlt[0],{delay:10});
   //Save
   await page.$$eval('.r-19u6a5r', el => el[0].click());
-  
-    //(IMG 2)
-  //Click Edit
-  await page.$$eval('.r-170w6zn', el => el[2].children[0].click());
-  //Wait for selector
-  await page.waitForSelector('.r-cpa5s6')
-  //Click ALT
-  await page.$$eval('.r-cpa5s6', el => el[1].children[0].click());
-  //Type in ALT
-  await page.keyboard.type(imgAlt[1],{delay:10});
-  //Save
-  await page.$$eval('.r-19u6a5r', el => el[0].click());
 
 
-    //(IMG 3)
-  //Click Edit
-  await page.$$eval('.r-170w6zn', el => el[1].children[0].click());
-  //Wait for selector
-  await page.waitForSelector('.r-cpa5s6')
-  //Click ALT
-  await page.$$eval('.r-cpa5s6', el => el[1].children[0].click());
-  //Type in ALT
-  await page.keyboard.type(imgAlt[2],{delay:10});
-  //Save
-  await page.$$eval('.r-19u6a5r', el => el[0].click());
+//(IMG 2)
+//Click Edit
+await page.$$eval('.r-170w6zn', el => el[2].children[0].click());
+//Wait for selector
+await page.waitForSelector('.r-cpa5s6')
+//Click ALT
+await page.$$eval('.r-cpa5s6', el => el[1].children[0].click());
+//Type in ALT
+await page.keyboard.type(imgAlt[1],{delay:10});
+//Save
+await page.$$eval('.r-19u6a5r', el => el[0].click());
 
 
-    //(IMG 4)
-  //Click Edit
-  await page.$$eval('.r-170w6zn', el => el[3].children[0].click());
-  //Wait for selector
-  await page.waitForSelector('.r-cpa5s6')
-  //Click ALT
-  await page.$$eval('.r-cpa5s6', el => el[1].children[0].click());
-  //Type in ALT
-  await page.keyboard.type(imgAlt[3],{delay:10});
-  //Save
-  await page.$$eval('.r-19u6a5r', el => el[0].click());
+//(IMG 3)
+//Click Edit
+await page.$$eval('.r-170w6zn', el => el[1].children[0].click());
+//Wait for selector
+await page.waitForSelector('.r-cpa5s6')
+//Click ALT
+await page.$$eval('.r-cpa5s6', el => el[1].children[0].click());
+//Type in ALT
+await page.keyboard.type(imgAlt[2],{delay:10});
+//Save
+await page.$$eval('.r-19u6a5r', el => el[0].click());
 
 
-  //Post Tweet
-  const tweet = await page.$$('.r-l5o3uw')
-  await tweet[1].click()
+//(IMG 4)
+//Click Edit
+await page.$$eval('.r-170w6zn', el => el[3].children[0].click());
+//Wait for selector
+await page.waitForSelector('.r-cpa5s6')
+//Click ALT
+await page.$$eval('.r-cpa5s6', el => el[1].children[0].click());
+//Type in ALT
+await page.keyboard.type(imgAlt[3],{delay:10});
+//Save
+await page.$$eval('.r-19u6a5r', el => el[0].click());
 
-  //Wait till Tweet is sent (when Modal closes)
-  await page.waitForSelector('.r-rsyp9y', {hidden:true})
 
-  //Deleting Images from devices
-  deleteImgs();
+//Post Tweet
+const tweet = await page.$$('.r-l5o3uw')
+await tweet[1].click()
+
+//Wait till Tweet is sent (when Modal closes)
+await page.waitForSelector('.r-rsyp9y', {hidden:true})
+
+//Deleting Images from devices
+deleteImgs();
 
 
-
-  //Test Phase
-  //Taking Screenshots
-  // await page.screenshot({ path: 'test6.png' })
+//Test Phase
+//Taking Screenshots
+// await page.screenshot({ path: 'test6.png' })
 
 
   await browser.close();

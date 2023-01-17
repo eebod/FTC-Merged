@@ -4,9 +4,9 @@
 
 > 📚 How the Program Works
 
-This Program uses nodejs https API to request [Midjourney's](https://midjourney.com/showcase/recent/) Webpage, pull out a section of the webpage and format it into JSON. It uses the fs API to download images directly from Midjourney's server locally, stores the prompt for each image in an array. The code picks 4 random image, there's a written utility function to do that.
+This Program uses nodejs https API to request [Midjourney's](https://midjourney.com/showcase/recent/) Webpage, pull out a section of the webpage and format it into JSON. It uses the fs API to download images directly from Midjourney's server locally and store the prompt for each image in an array. The code picks 4 random image.
 <br><br>
-Using Pupeteer's Package, the program head's to twitter login page and inputs the username and password. Twitter seems to randomly ask for number or twitter username when it observes unusual activities, there is a section of the code that looks out for that and provides number any time it does.
+Using Pupeteer's Package, the program loads twitter login page to inputs username and password. Twitter randomly asks for number or the twitter account's username after email entry, when it observes unusual activities. A section of the code looks out for that and provides the number any time it does.
 <br><br>
 Once logged in, the program selects the downloaded image files, it also clicks around to type in the Tweet text and also the ALT for each image. The program tweets, then deletes the downloaded image files and exits.
 
@@ -28,15 +28,15 @@ Once logged in, the program selects the downloaded image files, it also clicks a
 <br><br>
 
 <img src="https://github.com/eebod/git-file-store/blob/main/Repo_Files/FTC-Merged/image%20with%20tweet.png"/><br>
-<h4>Program chooses file, adds alt text.</h4>
+<h4>Program chooses file and adds alt text.</h4>
 
 <h4>IT <kbd>TWEETS</kbd></h4>
 
 </div>
 
 ## ✍️ Get Started
-- Clone the repo
-- Install dependencies
+- Clone the repository down to your local machine
+- Install dependencies with npm
 ```sh
 npm install
 ```
@@ -48,9 +48,9 @@ KEY="password-or-key"
 
 PHONE="08112345678"
 ```
-⚠️ The phone should follow local entry, without the prefix of the country code.
+⚠️ The phone number should follow the country's local format,  excluding the country code's prefix.
 
-## Contribute
+## 👥 Contribute
 
 Contributions are always welcome!
 

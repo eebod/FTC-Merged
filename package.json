@@ -1,7 +1,7 @@
 {
-  "name": "Image and Text Tweet bot",
+  "name": "tweet-bot",
   "version": "1.0.0",
-  "description": " A script that downloads image image from Midjourney's server and then uses puppeteer to tweet a text and the image with ALT texts also.",
+  "description": " Script to download image from Midjourney's server and then use puppeteer to tweet a text and the downloaded images with ALT texts.",
   "main": "action.js",
   "scripts": {
     "start": "node ./src/action.js",
