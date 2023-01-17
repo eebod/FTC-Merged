@@ -161,7 +161,14 @@ https.get('https://www.midjourney.com/showcase/recent/', (resp)=>{
   //Post Tweet
   const tweet = await page.$$('.r-l5o3uw')
   await tweet[1].click()
+
+  //Wait till Tweet is sent (when Modal closes)
+  await page.waitForSelector('.r-rsyp9y', {hidden:true})
+
+  //Deleting Images from devices
   deleteImgs();
+
+
 
   //Test Phase
   //Taking Screenshots
@@ -193,7 +200,7 @@ function getRandomInt(min, max) {
 }
 
 
-//Saving Images to Disk
+//Saving Images to Disk(Download)
 async function download(uri,fileName, alt){
 
     const file = fs.createWriteStream(`./${fileName}.png`);
@@ -210,7 +217,7 @@ async function download(uri,fileName, alt){
 }
 
 
-//CLeaning Images off disk
+//Delete downloaded images
 function deleteImgs(){
     try {
         fs.unlinkSync('./image1.png');
